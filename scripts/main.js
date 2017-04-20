@@ -161,6 +161,7 @@ var Order = React.createClass({
         <ul className="order">
           <li className="total">
             <strong>Total:</strong>
+            {helpers.formatPrice(total)}
           </li>
         </ul>
       </div>
