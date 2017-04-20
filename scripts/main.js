@@ -146,7 +146,7 @@ var Order = React.createClass({
   render : function(){
     var orderIds = Object.keys(this.props.order);
     var total = orderIds.reduce((prevTotal, key)=> {
-      var fish = this.props.fish[key];
+      var fish = this.props.fishes[key];
       var count = this.props.order[key];
       var isAvailable = fish && fish.status === 'available';
 
