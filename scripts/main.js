@@ -4,6 +4,10 @@ var ReactRouter = require('react-router');
 var createBrowserHistory = require('history/lib/createBrowserHistory');
 var helpers = require('./helpers');
 
+// Firebase
+var Rebase = require('re-base');
+var base = Rebase.createClass('https://catch-of-the-day-61d96.firebaseio.com/');
+
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var Navigation = ReactRouter.Navigation;
