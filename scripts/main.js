@@ -20,6 +20,12 @@ var App = React.createClass({
       order : {}
     }
   },
+  componentDidMount : function(){
+    base.syncState(this.props.params.storeId + '/fishes', {
+      context : this,
+      state : 'fishes'
+    });
+  },
   addToOrder : function(key) {
     // setting the quantity
     this.state.order[key] = this.state.order[key] + 1 || 1;
