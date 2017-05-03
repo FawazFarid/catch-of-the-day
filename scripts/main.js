@@ -165,6 +165,9 @@ var AddFishForm = React.createClass({
  * Header Component
  */
 var Header = React.createClass({
+  propTypes : {
+    tagline : React.PropTypes.string.isRequired
+  },
   render : function(){
     return (
       <header className="top">
@@ -178,13 +181,18 @@ var Header = React.createClass({
         <h3 className="tagLine"><span>{this.props.tagline}</span></h3>
       </header>
     )
-  }
+  },
 });
 
 /**
  * Order Component
  */
 var Order = React.createClass({
+  propTypes : {
+    fishes : React.PropTypes.object.isRequired,
+    order : React.PropTypes.object.isRequired,
+    removeFromOrder : React.PropTypes.func.isRequired
+  },
   renderOrder : function(key){
     var fish = this.props.fishes[key];
     var count = this.props.order[key];
@@ -248,6 +256,13 @@ var Order = React.createClass({
  * Inventory Component
  */
 var Inventory = React.createClass({
+  propTypes : {
+    addFish : React.PropTypes.func.isRequired,
+    loadSamples : React.PropTypes.func.isRequired,
+    fishes : React.PropTypes.object.isRequired,
+    linkState : React.PropTypes.func.isRequired,
+    removeFish : React.PropTypes.func.isRequired
+  },
   renderInventory : function(key) {
     var linkState = this.props.linkState;
     return(
